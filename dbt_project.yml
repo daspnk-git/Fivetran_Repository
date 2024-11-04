@@ -6,10 +6,11 @@ name: 'Fivetran_Repository'
 version: '1.0.0'
 config-version: 2
 
-# This setting configures which "profile" dbt uses for this project.
-profile: 'default'
 vars:
   dob: '22-07-1986'
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'default'
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -50,7 +51,6 @@ models:
       +materialized: table
     Practise:
       +materialized: table
-      P_DOB: '22-03-1985'
 
 
     
