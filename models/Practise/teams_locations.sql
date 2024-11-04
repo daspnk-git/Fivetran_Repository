@@ -1,5 +1,5 @@
 with teams as (
-    select * from {{ ref ('Teams.csv') }}
+    select * from {{ ref ('Teams') }}
 ),
 final as (
     select * from teams
