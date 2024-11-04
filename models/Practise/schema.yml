@@ -37,3 +37,11 @@ sources:
            - name: PRODUCT_ID
              tests: 
                - not_null
+
+
+models:
+  - name: Custom_schema_test_Prescription_Age
+    columns:
+      - name: AGE
+        tests:
+          - is_even
