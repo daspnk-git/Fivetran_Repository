@@ -1,12 +1,10 @@
-with birthdate as(
-    select Prescribing_doctor as Doctor,
-     AGE , 
-     {{ ref('dob') }} as dob
+with NP as(
+    select product_name, new_vs_refill
      from {{ source('fivetran_database_dbt_default_schema', 'CLEANSED_PRESCRIPTION_PRACTISE') }}
+     where new_vs_refill = '{{ var('NR') }}'
 ),
 
 final as (
-    select * from birthdate
+    select * from NP
 )
-
 select * from final
